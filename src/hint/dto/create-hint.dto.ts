@@ -1,6 +1,5 @@
-
 export class CreateHintDto {
-  page: string
+  page: string;
   title: string;
   description: string;
 

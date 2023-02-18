@@ -22,4 +22,9 @@ export class HintService {
     console.log('+');
     return hint.save();
   }
+  async getHintById(id: string) {
+    if (!id) {
+      return await this.hintModel.find({});
+    } else return await this.hintModel.findById(id);
+  }
 }

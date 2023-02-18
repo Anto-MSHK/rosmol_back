@@ -24,7 +24,8 @@ export class PageService {
     await this.pageModel.findByIdAndUpdate({ _id: hint.page }, updatedPage);
   }
   async getPageById(id: string) {
-    const pageById = await this.pageModel.findById(id);
-    return pageById;
+    if (!id) {
+      return await this.pageModel.find({});
+    } else return await this.pageModel.findById(id);
   }
 }
